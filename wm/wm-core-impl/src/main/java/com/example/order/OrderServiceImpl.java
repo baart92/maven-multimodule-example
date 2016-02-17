@@ -33,14 +33,14 @@ class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public Price calculatePrice() {
+    public Price calculatePriceAfterAddingTax() {
         BigDecimal totalPrice = BigDecimal.ZERO;
         List<Book> books = repository.getAll();
         repository.deleteAll();
         for (Book book : books) {
             totalPrice = totalPrice.add(book.getPrice().getValue());
         }
-        return new Price(totalPrice.multiply(BigDecimal.ONE.subtract(taxPercent)));
+        return new Price(totalPrice.multiply(BigDecimal.ONE.add(taxPercent)));
     }
 
     @Override

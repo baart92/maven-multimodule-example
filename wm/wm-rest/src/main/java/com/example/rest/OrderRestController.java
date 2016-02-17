@@ -24,7 +24,7 @@ public class OrderRestController {
     @RequestMapping(value = "/calculate", method = RequestMethod.GET)
     @ResponseBody
     public String removeBookFromOrder() {
-        return orderService.calculatePrice().getValue().toString();
+        return orderService.calculatePriceAfterAddingTax().getValue().toString();
     }
 
     @RequestMapping(method = RequestMethod.GET)

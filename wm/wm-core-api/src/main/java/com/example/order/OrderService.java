@@ -11,7 +11,7 @@ public interface OrderService {
 
     void deleteBookFromOrder(String id);
 
-    Price calculatePrice();
+    Price calculatePriceAfterAddingTax();
 
     List<Book> previewOrder();
 }
