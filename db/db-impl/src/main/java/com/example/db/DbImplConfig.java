@@ -11,7 +11,7 @@ public class DbImplConfig {
 
         bookRepository.insert(new BookEntity.Builder()
                         .withName("Wprowadzenie do algorytmow 2")
-                        .withPrice(Price.of("180.00"))
+                        .withPrice(Price.of("220.00"))
                         .build()
         );
 
